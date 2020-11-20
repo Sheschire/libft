@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 11:27:28 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/19 17:03:14 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/20 16:10:17 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	if (fd < 0 || !s)
+		return ;
 	write(fd, s, ft_strlen(s));
 }
