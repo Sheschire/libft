@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/16 18:48:24 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/20 11:31:54 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/23 11:29:55 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int	ft_atoi(const char *str)
 			minus *= -1;
 		str++;
 	}
-	
 	while (*str >= '0' && *str <= '9')
 	{
 		nb = nb * 10 + (*str - '0');

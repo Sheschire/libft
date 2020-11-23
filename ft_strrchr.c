@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 09:00:14 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/20 17:03:16 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/23 11:54:03 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strrchr(const char *s, int c)
 
 	s1 = (char *)s;
 	i = 0;
-	if (!*s)
-		return (0);
 	while (s1[i])
 		i++;
 	while (s1[i] != s1[0])

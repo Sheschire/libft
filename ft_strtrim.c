@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 21:54:05 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/23 11:04:26 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/23 12:08:30 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,13 @@ static int		is_set(char c, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	char			*trim;
 	size_t			size;
 	unsigned int	i;
 
 	i = 0;
-	if (!s1 || !set)
-		return (0);
 	while (s1[i] && is_set(s1[i], set))
 		i++;
 	s1 += i;
