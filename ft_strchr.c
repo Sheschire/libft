@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 08:59:36 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/23 11:13:36 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/23 13:18:57 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strchr(const char *s, int c)
 		if (*str == (unsigned char)c)
 			return (str);
 		if (*str == '\0')
-			return (0);
+			return (str);
 		str++;
 	}
 	return (0);
