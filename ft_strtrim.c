@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 21:54:05 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/23 12:08:30 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/23 15:02:20 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,18 @@ char			*ft_strtrim(char const *s1, char const *set)
 {
 	char			*trim;
 	size_t			size;
-	unsigned int	i;
 
-	i = 0;
-	while (s1[i] && is_set(s1[i], set))
-		i++;
-	s1 += i;
+	if (!s1)
+		return (0);
+	if (!set)
+		return (ft_strdup(s1));
+	while (*s1 && is_set(*s1, set))
+		s1++;
 	size = ft_strlen(s1);
-	while ((s1[size - 1] != s1[0]) && is_set(s1[size - 1], set))
+	while (size && is_set(s1[size], set))
 		size--;
-	trim = ft_substr(s1, 0, size);
+	trim = ft_substr((char *)s1, 0, size + 1);
+	if (trim == NULL)
+		return (0);
 	return (trim);
 }
