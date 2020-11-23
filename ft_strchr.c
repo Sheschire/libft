@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 08:59:36 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/23 13:30:38 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/23 13:33:19 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 char	*ft_strchr(const char *s, int c)
 {
 	char	*str;
+	int		i;
 
+	i = 0;
 	str = (char *)s;
-	while (str)
+	while (str[i])
 	{
-		if (*str == (unsigned char)c)
-			return (str);
-		str++;
+		if (str[i] == c)
+			return (str + i);
+		i++;
 	}
 	if (c == '\0')
-			return (0);
+			return (str + i);
 	return (0);
 }
