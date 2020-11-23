@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 21:54:05 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/23 10:24:38 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/23 11:04:26 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 
 static int		is_set(char c, char const *set)
 {
-	while (*set)
+	int		i;
+
+	i = 0;
+	while (set[i])
 	{
-		if (c == *set)
+		if (c == set[i])
 			return (1);
-		set++;
+		i++;
 	}
 	return (0);
 }

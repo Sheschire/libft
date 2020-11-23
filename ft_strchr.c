@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 08:59:36 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/21 13:28:15 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/23 11:06:35 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *s, int c)
 	char	*str;
 
 	str = (char *)s;
-	if (!s || !c)
+	if (!s)
 		return (0);
 	while (str)
 	{

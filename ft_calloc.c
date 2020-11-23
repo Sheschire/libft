@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 18:26:36 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/21 13:29:10 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/23 11:07:36 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	char	*ptr;
 
-	if (nmemb == 0 || size == 0)
+	if (nmemb == 0)
 		return (0);
 	ptr = malloc(sizeof(size * nmemb));
 	if (ptr == NULL)
