@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/17 19:50:48 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/21 13:47:27 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/23 10:51:14 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	j = 0;
 	i = 0;
-	if (!s1 || !s2)
-		return (0);
 	res = (char *)malloc(sizeof((*res) * (ft_strlen(s1) + ft_strlen(s2) + 1)));
 	if (res == NULL)
 		return (0);
