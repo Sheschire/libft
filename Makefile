@@ -1,4 +1,4 @@
-SRCS        =   ft_atoi.c \
+SRC        =   ft_atoi.c \
 				ft_bzero.c \
 				ft_calloc.c \
 				ft_isalnum.c \
@@ -33,46 +33,37 @@ SRCS        =   ft_atoi.c \
 				ft_tolower.c \
 				ft_toupper.c \
 
-BONUS		=	ft_lstadd_back.c \
+SRC_BONUS		=	ft_lstadd_back.c \
 				ft_lstadd_front.c \
 				ft_lstdelone.c \
 				ft_lstlast.c \
 				ft_lstnew.c \
 				ft_lstsize.c \
 
-OBJS        = $(SRCS:.c=.o)
-
-OBJS_BONUS	= $(BONUS:.c=.o)
-
 NAME        = libft.a
 
-CC          = clang
+OBJ        = $(SRC:.c=.o)
+OBJ_BONUS = $(SRC_BONUS:.c=.o)
+CC        = clang
+FLAGS    = -Wall -Werror -Wextra 
 
-CFLAGS      = -Wall -Wextra -Werror
+all: $(NAME)
 
-RM          = rm -f
+$(NAME): $(OBJ)
+    ar rcs $@ $^
 
-LIB         = ar -rcs
+bonus: $(OBJ_BONUS)
+    ar rcs $(NAME) $^
 
-all:        $(NAME)
+%.o: %.c
+    $(CC) -I. -o $@ -c $? $(FLAGS)
 
-.c.o:
-				 $(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+clean:
+    rm -f $(OBJ) $(OBJ_BONUS)
 
-$(NAME):    $(OBJS)
-				$(LIB) $(NAME) $(OBJS)
+fclean: clean
+    rm -f $(NAME)
 
-bonus :		$(OBJS_BONUS)
-				$(LIB) $(NAME) $(OBJS_BONUS)
+re: fclean all
 
-
-
-clean :
-				$(RM) $(OBJS) $(OBJS_BONUS)
-
-fclean :	clean
-				$(RM) $(NAME)
-
-re : fclean all
-
-.PHONY:     all bonus clean fclean re
+.PHONY: all bonus clean fclean re
