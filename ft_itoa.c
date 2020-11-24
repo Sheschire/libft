@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 15:52:11 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/23 10:45:45 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/24 11:03:02 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char			*ft_itoa(int n)
 	size_t	len;
 
 	len = ft_nbrlen(n);
-	str = (char *)malloc(sizeof(char *) * len + 1);
+	str = (char *)malloc(sizeof(char) * len + 1);
 	if (str == NULL)
 		return (0);
 	str = ft_convert(str, n, len);

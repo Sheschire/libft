@@ -35,7 +35,6 @@ SRC        =   ft_atoi.c \
 
 SRC_BONUS		=	ft_lstadd_back.c \
 				ft_lstadd_front.c \
-				ft_lstdelone.c \
 				ft_lstlast.c \
 				ft_lstnew.c \
 				ft_lstsize.c \
@@ -49,6 +48,8 @@ CC				= clang
 FLAGS			= -Wall -Werror -Wextra
 
 NAME			= libft.a
+
+all:			$(NAME)
 
 $(NAME):		$(OBJ)
 					ar rcs $@ $^
