@@ -40,30 +40,31 @@ SRC_BONUS		=	ft_lstadd_back.c \
 				ft_lstnew.c \
 				ft_lstsize.c \
 
-NAME        = libft.a
+OBJ				= $(SRC:.c=.o)
 
-OBJ        = $(SRC:.c=.o)
-OBJ_BONUS = $(SRC_BONUS:.c=.o)
-CC        = clang
-FLAGS    = -Wall -Werror -Wextra 
+OBJ_BONUS		= $(SRC_BONUS:.c=.o)
 
-all: $(NAME)
+CC				= clang
 
-$(NAME): $(OBJ)
-    ar rcs $@ $^
+FLAGS			= -Wall -Werror -Wextra
 
-bonus: $(OBJ_BONUS)
-    ar rcs $(NAME) $^
+NAME			= libft.a
+
+$(NAME):		$(OBJ)
+					ar rcs $@ $^
+
+bonus:			$(OBJ_BONUS)
+					ar rcs $(NAME) $^
 
 %.o: %.c
-    $(CC) -I. -o $@ -c $? $(FLAGS)
+					$(CC) -I. -o $@ -c $? $(FLAGS)
 
 clean:
-    rm -f $(OBJ) $(OBJ_BONUS)
+					rm -f $(OBJ) $(OBJ_BONUS)
 
-fclean: clean
-    rm -f $(NAME)
+fclean:			clean
+					rm -f $(NAME)
 
-re: fclean all
+re:				fclean all
 
 .PHONY: all bonus clean fclean re
