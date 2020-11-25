@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 17:51:36 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/24 18:32:09 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/25 14:58:30 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	t_list	*last;
-
 	if (lst == NULL)
 		return (0);
-	last = lst->next;
-	while (last->next)
-		last = last->next;
-	return (last);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }
