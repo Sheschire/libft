@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 12:10:16 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/25 14:24:37 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/25 14:29:35 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,14 @@ static int		ft_wordcount(char const *s, char c)
 	return (nb_word);
 }
 
-int				ft_free(char **tab, int j)
+int				ft_free(char **tab)
 {
-	while (j--)
-		free(tab[j]);
+	int		i;
+
+	i = 0;
+	while (tab[i])
+		free(tab[i++]);
+	free(tab);
 	return (0);
 }
 
@@ -71,7 +75,7 @@ char			**ft_split(char const *s, char c)
 		wordlen = ft_wordlen(s, c);
 		tab[j] = ft_substr(s, 0, wordlen);
 		if (tab[j] == NULL)
-			return(ft_free(tab, j));
+			return(ft_free(tab));
 		j++;
 		s += wordlen;
 	}
