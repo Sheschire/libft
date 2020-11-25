@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 12:10:16 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/25 14:46:38 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/25 14:48:27 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ static int		ft_wordcount(char const *s, char c)
 
 	i = 0;
 	nb_word = 0;
-	if (s[i] != c && s[i])
-		nb_word++;
 	while (s[i])
 	{
 		while (s[i] == c)
