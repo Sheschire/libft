@@ -6,7 +6,7 @@
 /*   By: tlemesle <tlemesle@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 12:10:16 by tlemesle          #+#    #+#             */
-/*   Updated: 2020/11/23 11:28:06 by tlemesle         ###   ########.fr       */
+/*   Updated: 2020/11/25 14:24:37 by tlemesle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,20 @@ static int		ft_wordcount(char const *s, char c)
 	while (s[i])
 	{
 		while (s[i] == c)
-		{
 			i++;
-			if (s[i] != c && s[i])
-				nb_word++;
-		}
-		i++;
+		if (s[i] != c && s[i])
+			nb_word++;
+		while (s[i] != c && s[i])
+			i++;
 	}
 	return (nb_word);
+}
+
+int				ft_free(char **tab, int j)
+{
+	while (j--)
+		free(tab[j]);
+	return (0);
 }
 
 char			**ft_split(char const *s, char c)
@@ -54,7 +60,8 @@ char			**ft_split(char const *s, char c)
 	if (!s)
 		return (0);
 	nb_word = ft_wordcount(s, c);
-	if (!(tab = (char **)malloc(sizeof(char *) * (nb_word + 1))))
+	tab = (char **)malloc(sizeof(char *) * (nb_word + 1));
+	if (tab == NULL)
 		return (0);
 	j = 0;
 	while (nb_word--)
@@ -63,6 +70,8 @@ char			**ft_split(char const *s, char c)
 			s++;
 		wordlen = ft_wordlen(s, c);
 		tab[j] = ft_substr(s, 0, wordlen);
+		if (tab[j] == NULL)
+			return(ft_free(tab, j));
 		j++;
 		s += wordlen;
 	}
